@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="border p-1">
           <div class="reverse-message">
-            <p>Original Message: {{}}</p>
+            <p>Original Message: {{"why isn't palindrome a palindrome?"}}</p>
             <p>Computed Reversed Message: {{}}</p>
           </div>
         </div>
