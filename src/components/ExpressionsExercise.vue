@@ -8,15 +8,14 @@
             Write a math equation Vue can evaluate, inside of the curly braces
             below:
           </p>
-
-          <p>{{}}</p>
+          <p>{{12*10}}</p>
         </div>
         <div class="border p-1">
           <p>
             Use interpolation to get the customary Hello, World! to display on
             the screen. Don't forget your quotes
           </p>
-          <p>{{}}</p>
+          <p>{{"hello world!"}}</p>
         </div>
       </div>
     </div>
