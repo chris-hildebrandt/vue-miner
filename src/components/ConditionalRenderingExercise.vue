@@ -4,13 +4,14 @@
       <div class="col-12">
         <div class="border p-1">
           <h5>Using The v-if Directive With A Direct Value</h5>
+          <button class="btn btn-info" @click="state.showPlayer = !state.showPlayer">toggle "showPlayer"</button>
           <p>
             Add the v-if directive to the "player-card" element and set its
             value to false. The entire element should no longer render to the
             screen.
           </p>
           <!-- add code to element below -->
-          <div class="player-card text-center">
+          <div class="player-card text-center" v-show="state.showPlayer">
             <div>
               <img :src="state.player.photo" />
             </div>
@@ -38,7 +39,7 @@
             toggle the value to true to get it to show up again.
           </p>
           <!-- add code to element below -->
-          <div class="player-card text-center">
+          <div class="player-card text-center" v-if="false">
             <div>
               <img :src="state.player.photo" />
             </div>
@@ -66,24 +67,25 @@
             to make sure you can get the correct element to display. Feel free
             to add another condition.
           </p>
+          <input type="number" min="0" max="100" v-model="state.grade">
           <!-- v-if comparing grade and 90 -->
-          <div>
+          <div v-if="state.grade >= 90">
             <p>The grade is 'A'.</p>
           </div>
           <!-- v-else-if comparing grade and 80 -->
-          <div>
+          <div v-else-if="state.grade >= 80">
             <p>The grade is 'B'.</p>
           </div>
           <!-- v-else-if comparing grade and 70 -->
-          <div>
+          <div v-else-if="state.grade >= 70">
             <p>The grade is 'C'.</p>
           </div>
           <!-- v-else-if comparing grade and 60 -->
-          <div>
+          <div v-else-if="state.grade >= 60">
             <p>The grade is 'D'.</p>
           </div>
           <!-- v-else to display if all the others fail -->
-          <div>
+          <div v-else>
             <p>The grade is 'F'.</p>
           </div>
         </div>
@@ -131,6 +133,8 @@ export default {
     const state = reactive({
       //add a property to toggle the player-card here.
       //add a property to set the number value here.
+      grade: 100,
+      showPlayer: true,
       player: {
         photo: "https://robohash.org/Mick",
         name: "Mick",
